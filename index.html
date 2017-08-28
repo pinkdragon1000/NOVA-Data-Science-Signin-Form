@@ -5,13 +5,68 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>NOVA Datascience Sign-in</title>
 <link rel="shortcut icon" type="images/x-icon" href="data.ico" />
-<!-- Load the Firebase library before loading the body. -->
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAOdoqi80u5QNcmjwymTnY7RnvS1sgN9sg",
+    authDomain: "nova-data-science-signin.firebaseapp.com",
+    databaseURL: "https://nova-data-science-signin.firebaseio.com",
+    projectId: "nova-data-science-signin",
+    storageBucket: "nova-data-science-signin.appspot.com",
+    messagingSenderId: "628585999318"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+function onFormSubmitted() {
+    event.preventDefault();
+
+    var date = Date.now();
+    var ref = firebase.database().ref(date);//new Firebase("https://nova-data-science-signin.firebaseio.com");
+    
+    var first = document.getElementById("first_name").value;
+    var last = document.getElementById("last_name").value;
+    var meetup = document.getElementById("meetup_name").value;
+
+
+    // Generate a reference to a new location and add some data using push()
+    //var postsRef = ref.child("nova-data-science-signin");
+    var newPostRef = ref.push({
+        first_name: first,
+        last_name: last,
+        meetup_name: meetup
+    });
+}
+</script>
 </head>
 <style>
+.SubmitButton
+{
+padding: 10px 15px 11px !important;
+font-size: 18px !important;
+background-color: #3787c6;
+font-weight: bold;
+text-shadow: 3px 3px #487fab;
+color: #ffffff;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border: 1px solid #487fab;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+.SubmitButton:active {
+    background-color: lightgrey;
+}
 form {
    width: 550px;
-   height: 480px;
+   height: 430px;
    margin: auto;
    position: relative;
    background-color: aliceblue;
@@ -28,6 +83,9 @@ label {
     text-align: right; 
     margin-bottom: 10px;
     margin-right: 3px;
+    color: #487fab;
+    font-weight: bold;
+    font-size: 18px;
 }
 input[type=text], textarea {
     width: 200px;
@@ -56,6 +114,26 @@ textarea {
 }
 .errorMessages span {
     font-weight: bold;
+}
+
+.errorMessages {
+    display: none;
+    list-style-type: disc;
+    padding: 8px 35px 8px 30px;
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border: 2px solid #EED3D7;
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.errorMessages span {
+    font-weight: bold;
+}
+
+p{
+    color: #487fab;
+    font-weight: bold;
+    font-size: 18px; 
 }
 
 </style>
@@ -106,14 +184,17 @@ function yesnoCheck() {
 </script>
 
 <p style="text-align:center;"><img src="datalogo.png" height="100px" width="200px" </img></p>
-   
+
+
 <center>
-<form method ="post" action="#">
+<br><br>
+<form method ="post" action="#" onsubmit="onFormSubmitted()">
  <ul class="errorMessages"></ul>
 
     <div>
         <label for="first_name"> First Name:</label> <br>
          <input id="first_name" type="text" required>
+    
     </div>
   <br>
     <div>
@@ -122,20 +203,14 @@ function yesnoCheck() {
     </div>
   <br>
   <p> Do you have a Meetup Account?</p>
-  Yes <input type="radio" onclick="yesnoCheck();" name="yesno" id="yesCheck"> No <input type="radio" onclick="yesnoCheck();" name="yesno" id="noCheck"><br>
+ <input type="radio" onclick="yesnoCheck();" name="yesno" id="yesCheck"> Yes   <input type="radio" onclick="yesnoCheck();" name="yesno" id="noCheck">No<br>
     <div id="ifYes" style="display:none">
 
     <label for="meetup_name">Meetup Name:</label> <br><input id="meetup_name" type="text" required></div>
 
-  <br>
-  <br>
-  <input id="date" name="date" style="width: 380px;" disabled="disabled">
-
-<script type="text/javascript">
-  document.getElementById('date').value = Date();
-</script>
   <br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" class="SubmitButton" >
+   <input type="reset" value="Reset" class="SubmitButton">
 </form>​
 </center>
 </html>
