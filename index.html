@@ -66,7 +66,7 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 form {
    width: 550px;
-   height: 450px;
+   height: 600px;
    margin: auto;
    position: relative;
    background-color: aliceblue;
@@ -116,17 +116,17 @@ textarea {
     font-weight: bold;
 }
 
-.errorMessages {
+.successMessages {
     display: none;
     list-style-type: disc;
     padding: 8px 35px 8px 30px;
-    color: #B94A48;
-    background-color: #F2DEDE;
-    border: 2px solid #EED3D7;
+    color: darkolivegreen;
+    background-color: #bfecbf;
+    border: 2px solid #a5d69f;
     border-radius: 4px;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
-.errorMessages span {
+.successMessages span {
     font-weight: bold;
 }
 
@@ -136,6 +136,127 @@ p{
     font-size: 18px; 
 }
 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+     color: darkolivegreen;
+    background-color: #bfecbf;
+    border: 2px solid #a5d69f;
+    border-radius: 4px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #F2DEDE;
+    border: 2px solid #EED3D7;
+    color: #B94A48;
+    border-radius: 4px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+    width: 518px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 1;
+    top: 1;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: lightgrey;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #B94A48;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
 </style>
 
 <script>
@@ -183,13 +304,57 @@ function yesnoCheck() {
 
 </script>
 
-<p style="text-align:center;"><img src="datalogo.png" height="100px" width="200px" </img></p>
 
+<p style="text-align:center;"><img src="datalogo.png" height="100px" width="200px" </img></p>
+<center>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="SubmitButton">Admin Login</button>
+</center>
+
+<p style="text-align:center">
+<div id="id01" class="modal">
+  
+  <center>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+  </center>
+  </p>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 <center>
-<br><br>
 <form method ="post" action="#" onsubmit="onFormSubmitted()">
  <ul class="errorMessages"></ul>
+ <div class=successMessages></div>
 
     <div>
         <label for="first_name"> First Name:</label> <br>
@@ -208,7 +373,7 @@ function yesnoCheck() {
 
     <label for="meetup_name">Meetup Name:</label> <br><input id="meetup_name" type="text" required></div>
 
-  <br><br>
+  <br>
   <input type="submit" value="Submit" class="SubmitButton" >
    <input type="reset" value="Reset" class="SubmitButton">
 </form>​
