@@ -22,40 +22,38 @@
 
     <body>
 
-     <div class="row">
-            <div class="col-md-6">
-            <p style="text-align:center;"><img src="images/datalogo.png" height="100px" width="200px" </img></p>
-            </div>
-                <center>
-                    <div class="col-md-6 text-right text-uppercase">
+        <div class="row">
+                <div class="Col">
+                    <p style="text-align:center;"><img src="images/datalogo.png" height="100px" width="200px">
                     <button onclick="document.getElementById('adminlogin').style.display='block'" style="width:auto;" class="SubmitButton">Admin Login</button>
-                </center>
-            </div>
+                    </p>
+                </div>
         </div>
 
         <!-- Admin Login -->
-        <div id="adminlogin" class="modal">
+        <div id="adminlogin" class="Modal">
             <center>
-                <form class="modal-content animate">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementById('adminlogin').style.display='none'" class="close" title="Close">&times;</span>
-                    </div>
-                    <ul class="errorMessages"></ul>
+                <form class="ModalContent animate">
+                
+                    <span onclick="document.getElementById('adminlogin').style.display='none'" class="CloseModal" title="Close">&times;</span>
+                 
+                    <ul class="ErrorMessages"></ul>
 
                     <div class="container">
                         <h2> Admin Login </h2>
                         <label>Email</label>
-                        <input type="text" placeholder="Enter Email" name="uname" required>
+                        <input type="text" name="username" required>
 
                         <label>Password</label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <input type="password" name="password" required>
                 
-                        <button type="submit">Login</button>
+                        <button type="submit" class="LoginButton">Login</button>
                     </div>
 
                     <div class="container">
-                        <button type="button" onclick="document.getElementById('adminlogin').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="button" onclick="document.getElementById('adminlogin').style.display='none'" class="CancelButton">Cancel</button>
                     </div>
+
                 </form>
             </center>
         </div>
@@ -65,19 +63,22 @@
         <center>
             <form method ="post" action="#" onsubmit="onFormSubmitted()" novalidate>
                 <h2> Meetup Attendee Sign-In </h2>
-                <ul class="errorMessages"></ul>
-                        <div>
-                            <label for="first_name"> First Name:</label> <br>
-                            <input id="first_name" type="text" required>
-                        </div>
-                    <div>
-                <label for="last_name">Last Name:</label> <br>
-                <input id="last_name" type="text" required>
-                <label for="meetup_account">Do you have a Meetup account?</label> <br>
-                 <input type="radio" onclick="yesnoCheck();" id="yesCheck"  name="yesno"> Yes   <input type="radio" onclick="yesnoCheck();" name= "yesno" id="noCheck">No<br>
-                <div id="ifYes" style="display:none">
-                    <label for="meetup_name">Meetup Name:</label> <br><input id="meetup_name" type="text">
+                <ul class="ErrorMessages"></ul>
+
+                <div>
+                    <label for="first_name"> First Name:</label> <br>
+                    <input id="first_name" type="text" required>
                 </div>
+
+                <div>
+                    <label for="last_name">Last Name:</label>
+                    <br>
+                    <input id="last_name" type="text" required>
+                    <label for="meetup_account">Do you have a Meetup account?</label> <br>
+                    <input type="radio" onclick="yesnoCheck();" id="yesCheck"  name="yesno"> Yes   <input type="radio" onclick="yesnoCheck();" name= "yesno" id="noCheck">No<br>
+                    <div id="ifYes" style="display:none">
+                        <label for="meetup_name">Meetup Name:</label> <br><input id="meetup_name" type="text">
+                    </div>
                 </div>
 
                 <br>
@@ -85,8 +86,5 @@
                 <input type="submit" value="Submit" class="SubmitButton">
             </form>
         </center>
-
     </body>
 </html>
-
-

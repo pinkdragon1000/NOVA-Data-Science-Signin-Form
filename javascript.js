@@ -73,8 +73,5 @@ function yesnoCheck() {
     else
     {
         document.getElementById('ifYes').style.display = 'none';
-    }
-        
-     
+    } 
 }
-
