@@ -1,3 +1,11 @@
+ ::-moz-selection{
+    background: papayawhip;
+    }
+ ::selection{
+    background-color:papayawhip;
+ }
+
+
 .SubmitButton
 {
 padding: 10px 15px 11px !important;
@@ -40,9 +48,13 @@ text-shadow:
     1px -1px 0 #487fab,
     -4px 1px 0 #487fab,
     1px 1px 0 #487fab;  
+cursor: default;
 }
 div {
     width: 400px;
+    color: #487fab;
+    font-size: 18px;
+    font-weight: bold;
 }
 label {
     display: inline-block;
@@ -52,7 +64,7 @@ label {
     margin-right: 3px;
     color: #487fab;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     font-family: bookman old style;
 }
 input[type=text], textarea {
@@ -75,7 +87,7 @@ textarea {
     background-color: #F2DEDE;
     border: 2px solid #EED3D7;
     border-radius: 4px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-shadow: rgba(255, 255, 255, 0.8);
 }
 .errorMessages span {
     font-weight: bold;
@@ -95,13 +107,6 @@ textarea {
     font-weight: bold;
 }
 
-p{
-    color: #487fab;
-    font-weight: bold;
-    font-size: 18px; 
-    font-family: bookman old style;
-}
-
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -110,6 +115,9 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    color: navy;
+    font-weight: bold;
+    font-family: bookman old style;
 }
 
 /* Set a style for all buttons */
@@ -148,8 +156,7 @@ button:hover {
 }
 
 .container {
-    padding: 16px;
-    width: 518px;
+    width: 300px;
 }
 .header {
     width: 100%;
@@ -170,7 +177,7 @@ span.psw {
     height: 100%; /* Full height */
     overflow: hidden; /* Enable scroll if needed */
     padding-top: 60px;
-    background-color: rgba( 0, 0, 0, 0.2 );
+    background-color: rgba( 0, 0, 0, 0.8 );
 }
 
 /* Modal Content/Box */

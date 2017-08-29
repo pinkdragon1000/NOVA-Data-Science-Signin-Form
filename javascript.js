@@ -72,11 +72,3 @@ function yesnoCheck() {
     else document.getElementById('ifYes').style.display = 'none';
 }
 
-/*Closes model if clicked anywhere outside*/
-var modal = document.getElementById('adminlogin');
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
