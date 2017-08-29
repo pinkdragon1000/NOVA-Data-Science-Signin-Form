@@ -36,11 +36,11 @@
         <!-- Admin Login -->
         <div id="adminlogin" class="modal">
             <center>
-                <form class="modal-content animate">
-                    <div class="imgcontainer">
+                <form class="modal-content animate" novalidate>
+                   
                         <span onclick="document.getElementById('adminlogin').style.display='none'" class="close" title="Close">&times;</span>
-                    </div>
-                    <ul class="errorMessages"></ul>
+                 
+                    <ul class="errorMessages" </ul>
 
                     <div class="container">
                         <h2> Admin Login </h2>
@@ -63,10 +63,9 @@
 
         <!--Signin Form-->
         <center>
-            <form method ="post" action="#" onsubmit="onFormSubmitted()">
+            <form method ="post" action="#" onsubmit="onFormSubmitted()" novalidate>
                 <h2> Meetup Attendee Sign-In </h2>
                 <ul class="errorMessages"></ul>
-                    <div class=successMessages></div>
                         <div>
                             <label for="first_name"> First Name:</label> <br>
                             <input id="first_name" type="text" required>
@@ -77,8 +76,14 @@
                 <label for="meetup_account">Do you have a Meetup account?</label> <br>
                 <input type="radio" onclick="yesnoCheck();" id="yesCheck"  name="yesno"> Yes   <input type="radio" onclick="yesnoCheck();" name= "yesno" id="noCheck">No<br>
                 <div id="ifYes" style="display:none">
-                    <label for="meetup_name">Meetup Name:</label> <br><input id="meetup_name" type="text" required>
+                <label for="meetup_name">Meetup Name:</label> 
+                <br>
+                <input id="meetup_name" type="text">
                 </div>
+
+                
+
+
                 <br>
                 <input type="reset" value="Reset" class="SubmitButton">
                 <input type="submit" value="Submit" class="SubmitButton">

@@ -68,7 +68,10 @@ $(function() {
 function yesnoCheck() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.display = 'block';
+        $("#meetup_name").attr("required","true");
     }
-    else document.getElementById('ifYes').style.display = 'none';
+ 
+        document.getElementById('ifYes').style.display = 'none';
+     
 }
 
