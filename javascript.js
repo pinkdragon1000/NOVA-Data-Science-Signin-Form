@@ -33,11 +33,13 @@ logout.addEventListener('click', e => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
         console.log(firebaseUser);
+        document.getElementById('adminlogin').style.display='none';
          document.getElementById('logout').style.display = 'block';
     }
     else{
          console.log(firebaseUser);
         console.log("not logged in");
+        document.getElementById('adminlogin').style.display='block';
          document.getElementById('logout').style.display = 'none';
     }
 });

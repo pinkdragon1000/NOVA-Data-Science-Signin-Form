@@ -174,21 +174,6 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
     height: 500px;
 }
 
-/* The Close Button (x) */
-.CloseModal {
-    position: relative;
-    left: 260px;
-    top: 0;
-    color: lightgrey;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.CloseModal:hover,
-.CloseModal:focus {
-    color: #B94A48;
-    cursor: pointer;
-}
 
 .Col {
   position: relative;

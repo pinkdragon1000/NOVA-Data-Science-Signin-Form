@@ -25,12 +25,12 @@
 
         <div class="row">
                 <div class="Col">
-                    <p style="text-align:center;">
-                    <img src="images/datalogo.png" height="100px" width="200px">
-                    <button onclick="document.getElementById('adminlogin').style.display='block'" style="width:auto;" class="SubmitButton">Admin Login</button>
-                     EMAIL OF ADMIN
-                     <button id="logout" class="SubmitButton" style="display: none;">Logout</button>
-                    </p>
+            
+                    <center>
+                        <img src="images/datalogo.png" height="100px" width="200px">
+                        <button id="logout" class="SubmitButton" style="display: none;">Logout</button>
+                     </center>
+                    
                     
                 </div>
         </div>
@@ -39,9 +39,6 @@
         <div id="adminlogin" class="Modal">
             <center>
                 <div class="ModalContent animate"  </div>
-                <right>
-                <span onclick="document.getElementById('adminlogin').style.display='none'" class="CloseModal" title="Close">&times;</span>
-                </right>
                     <ul class="ErrorMessages"></ul>
 
                     <div class="container">
@@ -53,10 +50,6 @@
                         <input type="password" id="password" required>
                 
                         <button type="submit" id="login" class="LoginButton">Login</button>
-                    </div>
-
-                    <div class="container">
-                        <button type="button" onclick="document.getElementById('adminlogin').style.display='none'" class="CancelButton">Cancel</button>
                     </div>
 
                 </div>
