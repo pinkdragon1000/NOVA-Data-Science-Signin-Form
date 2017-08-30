@@ -17,16 +17,24 @@ function onFormSubmitted() {
     
     var first = document.getElementById("first_name").value;
     var last = document.getElementById("last_name").value;
-    var meetup = document.getElementById("meetup_name").value;
+    var meetupaccount=$("input[name=yesno]:checked").val();
+    var meetupname = document.getElementById("meetup_name").value;
 
+     if (first==""  || last=="")
+    {
 
-    // Generate a reference to a new location and add some data using push()
-    //var postsRef = ref.child("nova-data-science-signin");
-    var newPostRef = ref.push({
-        first_name: first,
-        last_name: last,
-        meetup_name: meetup
-    });
+    }
+    else
+    {
+        // Generate a reference to a new location and add some data using push()
+        //var postsRef = ref.child("nova-data-science-signin");
+        var newPostRef = ref.push({
+            first_name: first,
+            last_name: last,
+            meetup_name: meetupname
+        });
+    }
+    
 }
 
 /* Add errors to form if save fails */
@@ -66,7 +74,7 @@ $(function() {
 
 /* Displays field "Meetup name" if yes is checked and doesn't display if no is checked*/
 function yesnoCheck() {
-    if (document.getElementById('yesCheck').checked) {
+    if (document.getElementById('meetup_account').checked) {
         document.getElementById('ifYes').style.display = 'block';
         $("#meetup_name").attr("required","true");
     }

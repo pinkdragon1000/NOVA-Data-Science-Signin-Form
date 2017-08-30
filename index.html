@@ -61,7 +61,7 @@
 
         <!--Signin Form-->
         <center>
-            <form method ="post" action="#" onsubmit="onFormSubmitted()" novalidate>
+            <form method ="post" action="#" onsubmit="onFormSubmitted()" id="mainform" novalidate>
                 <h2> Meetup Attendee Sign-In </h2>
                 <ul class="ErrorMessages"></ul>
 
@@ -75,7 +75,7 @@
                     <br>
                     <input id="last_name" type="text" required>
                     <label for="meetup_account">Do you have a Meetup account?</label> <br>
-                    <input type="radio" onclick="yesnoCheck();" id="yesCheck"  name="yesno"> Yes   <input type="radio" onclick="yesnoCheck();" name= "yesno" id="noCheck">No<br>
+                    <input type="radio" onclick="yesnoCheck();" id="meetup_account"  name="yesno" required> Yes   <input type="radio" onclick="yesnoCheck();" name= "yesno">No<br>
                     <div id="ifYes" style="display:none">
                         <label for="meetup_name">Meetup Name:</label> <br><input id="meetup_name" type="text">
                     </div>
