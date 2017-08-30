@@ -2,11 +2,11 @@
  
  /*Changes highlight selection color*/
 ::-moz-selection{
-    background: papayawhip;
+    background: rgb(184,211,233);
 }
 
 ::selection{
-    background-color:papayawhip;
+    background-color:rgb(184,211,233);
 }
 
 form {
