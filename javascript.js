@@ -1,6 +1,8 @@
- window.onload = function() {
-     var x = document.lastModified;
-    document.getElementById("dateupdated").innerHTML = "Page Last Modified: "+ x;       
+ /* Sita Robinson */
+ 
+window.onload = function() {
+    var date = document.lastModified;
+    document.getElementById("dateupdated").innerHTML = "Page Last Modified: "+ date;       
 }
  // Initialize Firebase
   var config = {
