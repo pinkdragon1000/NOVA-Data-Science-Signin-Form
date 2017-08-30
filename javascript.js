@@ -1,3 +1,7 @@
+ window.onload = function() {
+     var x = document.lastModified;
+    document.getElementById("dateupdated").innerHTML = "Page Last Modified: "+ x;       
+}
  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAOdoqi80u5QNcmjwymTnY7RnvS1sgN9sg",
