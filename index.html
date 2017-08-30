@@ -15,9 +15,9 @@
         <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
 
-        <!--Main Javascript file-->
-        <script src="javascript.js"></script>
+    
 
     </head>
 
@@ -25,37 +25,41 @@
 
         <div class="row">
                 <div class="Col">
-                    <p style="text-align:center;"><img src="images/datalogo.png" height="100px" width="200px">
+                    <p style="text-align:center;">
+                    <img src="images/datalogo.png" height="100px" width="200px">
                     <button onclick="document.getElementById('adminlogin').style.display='block'" style="width:auto;" class="SubmitButton">Admin Login</button>
+                     EMAIL OF ADMIN
+                     <button id="logout" class="SubmitButton" style="display: none;">Logout</button>
                     </p>
+                    
                 </div>
         </div>
 
         <!-- Admin Login -->
         <div id="adminlogin" class="Modal">
             <center>
-                <form class="ModalContent animate">
-                
-                    <span onclick="document.getElementById('adminlogin').style.display='none'" class="CloseModal" title="Close">&times;</span>
-                 
+                <div class="ModalContent animate"  </div>
+                <right>
+                <span onclick="document.getElementById('adminlogin').style.display='none'" class="CloseModal" title="Close">&times;</span>
+                </right>
                     <ul class="ErrorMessages"></ul>
 
                     <div class="container">
                         <h2> Admin Login </h2>
                         <label>Email</label>
-                        <input type="text" name="username" required>
+                        <input type="text" id="email" required>
 
                         <label>Password</label>
-                        <input type="password" name="password" required>
+                        <input type="password" id="password" required>
                 
-                        <button type="submit" class="LoginButton">Login</button>
+                        <button type="submit" id="login" class="LoginButton">Login</button>
                     </div>
 
                     <div class="container">
                         <button type="button" onclick="document.getElementById('adminlogin').style.display='none'" class="CancelButton">Cancel</button>
                     </div>
 
-                </form>
+                </div>
             </center>
         </div>
 
@@ -90,5 +94,7 @@
                 <p id="dateupdated">
             </form>
         </center>
+            <!--Main Javascript file-->
+        <script src="javascript.js"></script>
     </body>
 </html>

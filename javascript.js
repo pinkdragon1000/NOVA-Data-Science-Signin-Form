@@ -15,6 +15,34 @@ window.onload = function() {
   };
   firebase.initializeApp(config);
 
+var txtEmail=document.getElementById("email");
+var txtPassword=document.getElementById("password");
+var login=document.getElementById("login");
+login.addEventListener("click", e =>{
+var email=txtEmail.value;
+var password=txtPassword.value;
+var auth=firebase.auth();
+const promise = auth.signInWithEmailAndPassword(email, password);
+promise.catch(e=>console.log(e.message));
+});
+
+logout.addEventListener('click', e => {
+    firebase.auth().signOut();
+});
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser){
+        console.log(firebaseUser);
+         document.getElementById('logout').style.display = 'block';
+    }
+    else{
+         console.log(firebaseUser);
+        console.log("not logged in");
+         document.getElementById('logout').style.display = 'none';
+    }
+});
+
+
 function onFormSubmitted() {
     event.preventDefault();
 

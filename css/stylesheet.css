@@ -170,12 +170,14 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 .ModalContent {
     border: 1px solid #888;
     background-color: aliceblue;
+    width: 600px;
+    height: 500px;
 }
 
 /* The Close Button (x) */
 .CloseModal {
-    position: absolute;
-    right: 25px;
+    position: relative;
+    left: 260px;
     top: 0;
     color: lightgrey;
     font-size: 35px;
