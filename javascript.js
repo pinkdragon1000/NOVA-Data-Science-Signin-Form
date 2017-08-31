@@ -1,9 +1,14 @@
  /* Sita Robinson */
  
-window.onload = function() {
+$( document ).ready(function() {
+     handleLoad();
+});
+
+function handleLoad()
+{
     var date = document.lastModified;
-    document.getElementById("dateupdated").innerHTML = "Page Last Modified: "+ date;       
-}
+    //document.getElementById("dateupdated").innerHTML = "Page Last Modified: "+ date;  
+    $("#dateupdated").html("Page Last Modified: "+ date);
  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAOdoqi80u5QNcmjwymTnY7RnvS1sgN9sg",
@@ -18,19 +23,19 @@ window.onload = function() {
 var txtEmail=document.getElementById("email");
 var txtPassword=document.getElementById("password");
 var login=document.getElementById("login");
-login.addEventListener("click", e =>{
+login.addEventListener("click", function(e){
 var email=txtEmail.value;
 var password=txtPassword.value;
 var auth=firebase.auth();
 const promise = auth.signInWithEmailAndPassword(email, password);
-promise.catch(e=>console.log(e.message));
+promise.catch(function(e){console.log(e.message);});
 });
 
-logout.addEventListener('click', e => {
+logout.addEventListener('click', function(e) {
     firebase.auth().signOut();
 });
 
-firebase.auth().onAuthStateChanged(firebaseUser => {
+firebase.auth().onAuthStateChanged(function(firebaseUser) {
     if(firebaseUser){
         console.log(firebaseUser);
         document.getElementById('adminlogin').style.display='none';
@@ -118,4 +123,5 @@ function yesnoCheck() {
     {
         document.getElementById('ifYes').style.display = 'none';
     } 
+}
 }
