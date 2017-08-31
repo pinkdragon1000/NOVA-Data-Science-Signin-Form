@@ -50,6 +50,10 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
 });
 
 
+
+}
+
+
 function onFormSubmitted() {
     event.preventDefault();
 
@@ -123,5 +127,4 @@ function yesnoCheck() {
     {
         document.getElementById('ifYes').style.display = 'none';
     } 
-}
 }
