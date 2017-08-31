@@ -48,7 +48,6 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
 });
 
 window.onFormSubmitted = function() {
-    event.preventDefault();
 
     var date = Date.now();
     var ref = firebase.database().ref(date);
@@ -74,6 +73,7 @@ window.onFormSubmitted = function() {
     }
     return false;
 }
+
 
 /* Add errors to form if save fails */
 $(function() {
@@ -109,7 +109,6 @@ $(function() {
     
     $('form').each(createAllErrors);
 });
-
 /* Displays field "Meetup name" if yes is checked and doesn't display if no is checked*/
 window.yesnoCheck = function() {
     if (document.getElementById('meetup_account').checked) {
