@@ -75,7 +75,7 @@ function onFormSubmitted() {
             meetup_name: meetupname
         });
     }
-    
+    return false;
 }
 
 /* Add errors to form if save fails */
