@@ -1,8 +1,6 @@
  /* Sita Robinson */
  
-$( document ).ready(function() {
-     handleLoad();
-});
+
 
 function handleLoad()
 {
@@ -49,12 +47,7 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
     }
 });
 
-
-
-}
-
-
-function onFormSubmitted() {
+window.onFormSubmitted = function() {
     event.preventDefault();
 
     var date = Date.now();
@@ -118,7 +111,7 @@ $(function() {
 });
 
 /* Displays field "Meetup name" if yes is checked and doesn't display if no is checked*/
-function yesnoCheck() {
+window.yesnoCheck = function() {
     if (document.getElementById('meetup_account').checked) {
         document.getElementById('ifYes').style.display = 'block';
         $("#meetup_name").attr("required","true");
@@ -127,4 +120,11 @@ function yesnoCheck() {
     {
         document.getElementById('ifYes').style.display = 'none';
     } 
+};
+
 }
+
+
+$( document ).ready(function() {
+     handleLoad();
+});
