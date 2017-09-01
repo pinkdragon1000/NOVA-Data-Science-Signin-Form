@@ -74,12 +74,11 @@ window.onFormSubmitted = function() {
     return false;
 }
 
-
 /* Add errors to form if save fails */
 $(function() {
     var createAllErrors = function() {
         var form = $(this);
-        var errorList = $('ul.errorMessages', form);
+        var errorList = $('ul.ErrorMessages', form);
         
         var showAllErrorMessages = function() {
             errorList.empty();
@@ -88,7 +87,7 @@ $(function() {
             form.find(':invalid').each(function(index, node) {
 
                 //Find the field's corresponding label
-                var label = $('label[for=' + node.id + ']');
+                var label = $('label[for=\"' + node.id + '\"]');
 
                 //Opera incorrectly does not fill the validationMessage property.
                 var message = node.validationMessage || 'Invalid value.';
@@ -109,6 +108,8 @@ $(function() {
     
     $('form').each(createAllErrors);
 });
+
+
 /* Displays field "Meetup name" if yes is checked and doesn't display if no is checked*/
 window.yesnoCheck = function() {
     if (document.getElementById('meetup_account').checked) {

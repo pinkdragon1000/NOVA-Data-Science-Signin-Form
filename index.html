@@ -39,10 +39,10 @@
         <!-- Admin Login -->
         <div id="adminlogin" class="Modal">
             <center>
-                <div class="ModalContent animate">
-                    <ul class="ErrorMessages"></ul>
-
+                <form class="ModalContent animate" onsubmit="return false;" method="post">
+                   
                     <div class="container">
+                         <ul class="ErrorMessages"></ul>
                         <h2> Admin Login </h2>
                         <label>Email</label>
                         <input type="text" id="email" required>
@@ -53,14 +53,14 @@
                         <button type="submit" id="login" class="LoginButton">Login</button>
                     </div>
 
-                </div>
+                </form>
             </center>
         </div>
 
 
         <!--Signin Form-->
         <center>
-            <form method ="post" action="index.html" onsubmit="return onFormSubmitted();" id="mainform" novalidate>
+            <form method ="post" action="index.html" onsubmit="return onFormSubmitted();" id="mainform">
                 <h2> Meetup Attendee Sign-In </h2>
                 <ul class="ErrorMessages"></ul>
 
