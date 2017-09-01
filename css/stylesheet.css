@@ -19,12 +19,8 @@ form {
 h2 {
 font-family: bookman old style;
 cursor: default;
-color: white;
-text-shadow:
-    -1px -1px 0 #487fab,
-    1px -1px 0 #487fab,
-    -4px 1px 0 #487fab,
-    1px 1px 0 #487fab;  
+color: navy;
+
 }
 
 div {
