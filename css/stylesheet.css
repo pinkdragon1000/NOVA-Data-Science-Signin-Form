@@ -48,7 +48,7 @@ input[type=text], input[type=password], text-area {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(158, 156, 156);
     box-sizing: border-box;
     color: rgb(22,40,76);
     font-weight: bold;
