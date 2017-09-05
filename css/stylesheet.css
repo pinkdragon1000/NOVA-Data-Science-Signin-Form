@@ -13,7 +13,7 @@ form {
    width: 550px;
    height: 600px;
    position: relative;
-   background-color: aliceblue;
+   background-color: white;
 }
 
 h2 {
@@ -25,7 +25,7 @@ color: rgb(22,40,76);
 
 div {
     width: 400px;
-    color: #487fab;
+    color: rgb(60,129,184);
     font-size: 16px;
     font-weight: bold;
     font-family: bookman old style;
@@ -37,7 +37,7 @@ label {
     text-align: center; 
     margin-bottom: 10px;
     margin-right: 3px;
-    color: #487fab;
+    color: rgb(60,129,184);
     font-weight: bold;
     font-size: 16px;
     font-family: bookman old style;
@@ -50,7 +50,7 @@ input[type=text], input[type=password], text-area {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    color: navy;
+    color: rgb(22,40,76);
     font-weight: bold;
     font-family: bookman old style;
 }
@@ -65,6 +65,8 @@ input[type=text], input[type=password], text-area {
     border: 2px solid #EED3D7;
     border-radius: 4px;
     text-shadow: rgba(255, 255, 255, 0.8);
+    font-family:bookman old style;
+    font-size: 14px;
 }
 
 .ErrorMessages span {
@@ -166,7 +168,6 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 /* Modal Content/Box */
 .ModalContent {
     border: 1px solid #888;
-    background-color: aliceblue;
     width: 600px;
     height: 500px;
 }
