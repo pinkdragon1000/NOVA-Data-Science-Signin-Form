@@ -46,7 +46,7 @@ label {
 input[type=text], input[type=password], text-area {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+   
     display: inline-block;
     border: 1px solid rgb(158, 156, 156);
     box-sizing: border-box;
@@ -88,25 +88,6 @@ input[type=text], input[type=password], text-area {
 }
 
 /*Button Styles */
-.LoginButton {
-     color: darkolivegreen;
-    background-color: #bfecbf;
-    border: 2px solid #a5d69f;
-    border-radius: 4px;
-    padding: 14px 20px;
-    margin: 8px 0;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px !important;
-    font-weight: bold;
-}
-
-.LoginButton:hover {
-    opacity: 0.8;
-}
-.LoginButton:active {
-    background-color: lightgrey;
-}
 
 .SubmitButton {
 padding: 10px 15px 11px !important;
