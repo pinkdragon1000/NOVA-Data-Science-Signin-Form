@@ -48,7 +48,7 @@ label {
 input[type=text], input[type=password], text-area {
     width: 100%;
     padding: 12px 20px;
-   
+    font-size: 16px;
     display: inline-block;
     border: 1px solid rgb(158, 156, 156);
     box-sizing: border-box;
