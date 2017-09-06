@@ -9,6 +9,10 @@
     background-color:rgb(184,211,233);
 }
 
+body {
+    font-family: helvetica;
+}
+
 form {
    width: 550px;
    height: 600px;
@@ -17,7 +21,6 @@ form {
 }
 
 h2 {
-font-family: bookman old style;
 cursor: default;
 color: rgb(22,40,76);
 
@@ -28,7 +31,6 @@ div {
     color: rgb(60,129,184);
     font-size: 16px;
     font-weight: bold;
-    font-family: bookman old style;
 }
 
 label {
@@ -41,7 +43,6 @@ label {
     font-weight: bold;
     font-size: 16px;
     padding: 5px;
-    font-family: bookman old style;
 }
 
 input[type=text], input[type=password], text-area {
@@ -53,7 +54,6 @@ input[type=text], input[type=password], text-area {
     box-sizing: border-box;
     color: rgb(22,40,76);
     font-weight: bold;
-    font-family: bookman old style;
 }
 
 /*Error and Success Messages*/
@@ -66,25 +66,10 @@ input[type=text], input[type=password], text-area {
     border: 2px solid #EED3D7;
     border-radius: 4px;
     text-shadow: rgba(255, 255, 255, 0.8);
-    font-family:bookman old style;
     font-size: 14px;
 }
 
 .ErrorMessages span {
-    font-weight: bold;
-}
-
-.SuccessMessages {
-    display: none;
-    list-style-type: disc;
-    padding: 8px 35px 8px 30px;
-    color: darkolivegreen;
-    background-color: #bfecbf;
-    border: 2px solid #a5d69f;
-    border-radius: 4px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-.SuccessMessages span {
     font-weight: bold;
 }
 
@@ -114,23 +99,6 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 
 .SubmitButton:hover {
     opacity: 0.8;
-}
-
-.CancelButton {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #F2DEDE;
-    border: 2px solid #EED3D7;
-    color: #B94A48;
-    border-radius: 4px;
-}
-
-.CancelButton:hover {
-    opacity: 0.8;
-}
-
-.CancelButton:active {
-    background-color: lightgrey;
 }
 
 /* Modal-Admin Login */
