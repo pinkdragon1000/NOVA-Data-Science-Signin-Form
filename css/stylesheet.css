@@ -76,21 +76,15 @@ input[type=text], input[type=password], text-area {
 /*Button Styles */
 
 .SubmitButton {
-padding: 10px 15px 11px !important;
-font-size: 18px !important;
-background-color: #3787c6;
-font-weight: bold;
-text-shadow: 3px 3px #487fab;
-color: #ffffff;
-border-radius: 5px;
--moz-border-radius: 5px;
--webkit-appearance: none;
--webkit-border-radius: 5px;
-border: 1px solid #487fab;
-cursor: pointer;
-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
--moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
--webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    padding: 10px 15px 11px !important;
+    font-size: 18px !important;
+    background-color: rgb(22,40,76);
+    font-weight: bold;
+    color: #ffffff;
+    -webkit-appearance: none;
+    border: 3px solid #487fab;
+    cursor: pointer;
+    
 }
 
 .SubmitButton:active {
