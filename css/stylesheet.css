@@ -28,7 +28,7 @@ color: rgb(22,40,76);
 
 div {
     width: 400px;
-    color: rgb(60,129,184);
+    color: rgb(81, 166, 199);
     font-size: 16px;
     font-weight: bold;
 }
@@ -39,7 +39,7 @@ label {
     text-align: center; 
     margin-bottom: 10px;
     margin-right: 3px;
-    color: rgb(60,129,184);
+    color: rgb(81, 166, 199);
     font-weight: bold;
     font-size: 16px;
     padding: 5px;
