@@ -59,7 +59,6 @@ window.onFormSubmitted = function() {
 
      if (first==""  || last=="")
     {
-
     }
     else
     {
@@ -70,6 +69,7 @@ window.onFormSubmitted = function() {
             last_name: last,
             meetup_name: meetupname
         });
+        document.getElementById("mainform").reset();
     }
     return false;
 }
@@ -89,14 +89,25 @@ $(function() {
                 //Find the field's corresponding label
                 var label = $('label[for=\"' + node.id + '\"]');
 
+                if ( label.html() === undefined)
+                    return;
+
+              
+            
                 //Opera incorrectly does not fill the validationMessage property.
                 var message = node.validationMessage || 'Invalid value.';
                 errorList
                     .show()
                     .append('<li><span>' + label.html() + '</span> ' + message + '</li>');
+            
             });
-        };
         
+        
+                 errorList
+                .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>");
+        
+        };
+
         $('input[type=submit], button', form).on('click', showAllErrorMessages);
         $('input[type=text]', form).on('keypress', function(event) {
             //keyCode 13 is Enter
@@ -112,6 +123,7 @@ $(function() {
 
 /* Displays field "Meetup name" if yes is checked and doesn't display if no is checked*/
 window.yesnoCheck = function() {
+    $("#meetup_account").removeAttr("required");
     if (document.getElementById('meetup_account').checked) {
         document.getElementById('ifYes').style.display = 'block';
         $("#meetup_name").attr("required","true");
@@ -119,6 +131,7 @@ window.yesnoCheck = function() {
     else
     {
         document.getElementById('ifYes').style.display = 'none';
+        $("#meetup_name").removeAttr("required");
     } 
 };
 
