@@ -88,7 +88,7 @@ input[type=text], input[type=password], text-area {
 }
 
 .SubmitButton:active {
-    background-color: lightgrey;
+    background-color: rgb(81, 166, 199);
 }
 
 .SubmitButton:hover {
