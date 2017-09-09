@@ -1,7 +1,6 @@
  /* Sita Robinson */
  
 
-
 function handleLoad()
 {
     var date = document.lastModified;
@@ -47,6 +46,11 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
     }
 });
 
+function resetForm() {
+    document.getElementById("mainform").reset();
+    $("#meetup_account").attr("required","true");
+}
+
 window.onFormSubmitted = function() {
 
     var date = Date.now();
@@ -69,7 +73,7 @@ window.onFormSubmitted = function() {
             last_name: last,
             meetup_name: meetupname
         });
-        document.getElementById("mainform").reset();
+        resetForm();
     }
     return false;
 }
@@ -81,6 +85,7 @@ $(function() {
         var errorList = $('ul.ErrorMessages', form);
         
         var showAllErrorMessages = function() {
+            $("#ErrorMessages").addClass(".ErrorMessages")
             errorList.empty();
             
             //Find all invalid fields within the form.
@@ -102,10 +107,14 @@ $(function() {
             
             });
         
-        
-                 errorList
-                .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>");
-        
+            if (errorList.html() == "") {
+                $("#ErrorMessages").removeClass("ErrorMessages");
+                $("#ErrorMessages").addClass("SuccessMessages");
+                errorList
+                    .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>");
+        }
+    
+               
         };
 
         $('input[type=submit], button', form).on('click', showAllErrorMessages);

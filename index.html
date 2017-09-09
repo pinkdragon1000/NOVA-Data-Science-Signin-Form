@@ -73,7 +73,7 @@
             <form method ="post" action="index.html" onsubmit="return onFormSubmitted();" id="mainform">
                 <h2> Meetup Attendee Sign-In </h2>
                 <hr>
-                <ul class="ErrorMessages"></ul>
+                <ul class="ErrorMessages" id="ErrorMessages"></ul>
 
                 <div>
                     <label for="first_name" class="required"> First Name:</label> <br>
@@ -94,8 +94,8 @@
                 </div>
 
                 <br>
-                <input type="reset" value="Reset" class="SubmitButton">
-                <input type="submit" value="Submit" class="SubmitButton">
+                <button type="reset" value="Reset" class="SubmitButton">Reset</button>
+                <button type="submit" value="Submit" class="SubmitButton">Submit</button>
                 <br>
                 <br>
                 <p id="dateupdated">
