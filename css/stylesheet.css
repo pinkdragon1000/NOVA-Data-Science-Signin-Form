@@ -73,6 +73,11 @@ input[type=text], input[type=password], text-area {
     font-weight: bold;
 }
 
+label.required:before {
+  content:'* ';
+  color: #B94A48;
+}
+
 /*Button Styles */
 
 .SubmitButton {
