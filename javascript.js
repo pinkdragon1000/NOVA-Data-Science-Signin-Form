@@ -85,7 +85,8 @@ $(function() {
         var errorList = $('ul.ErrorMessages', form);
         
         var showAllErrorMessages = function() {
-            $("#ErrorMessages").addClass(".ErrorMessages")
+            $("#ErrorMessages").removeClass("SuccessMessages")
+            $("#ErrorMessages").addClass("ErrorMessages")
             errorList.empty();
             
             //Find all invalid fields within the form.
