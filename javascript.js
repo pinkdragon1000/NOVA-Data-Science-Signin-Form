@@ -77,11 +77,13 @@ lasttrimmed=last.trim();
             meetup_name: meetupname
         });
         resetForm();
+       
+    
     }
     return false;
 }
 
-/* Add errors to form if save fails */
+// Add errors to form if save fails
 $(function() {
     var createAllErrors = function() {
         
