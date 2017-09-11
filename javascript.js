@@ -91,6 +91,7 @@ $(function() {
 
             $("#first_name").val($("#first_name").val().trim());        
             $("#last_name").val($("#last_name").val().trim());
+            $("#meetup_name").val($("#meetup_name").val().trim());
 
             
             $("#ErrorMessages").removeClass("SuccessMessages")
