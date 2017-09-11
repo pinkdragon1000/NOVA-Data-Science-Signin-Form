@@ -4,7 +4,6 @@
 function handleLoad()
 {
     var date = document.lastModified;
-    //document.getElementById("dateupdated").innerHTML = "Page Last Modified: "+ date;  
     $("#dateupdated").html("Page Last Modified: "+ date);
  // Initialize Firebase
   var config = {
