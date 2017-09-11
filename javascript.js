@@ -54,14 +54,16 @@ function resetForm() {
 window.onFormSubmitted = function() {
 
     var date = Date.now();
-    var ref = firebase.database().ref(date);
+    var ref = firebase.database().ref(date);    
     
     var first = document.getElementById("first_name").value;
     var last = document.getElementById("last_name").value;
     var meetupaccount=$("input[name=yesno]:checked").val();
     var meetupname = document.getElementById("meetup_name").value;
 
-     if (first==""  || last=="")
+firsttrimmed=first.trim();
+lasttrimmed=last.trim();
+     if (firsttrimmed==""  || lasttrimmed=="")
     {
     }
     else
@@ -81,14 +83,20 @@ window.onFormSubmitted = function() {
 /* Add errors to form if save fails */
 $(function() {
     var createAllErrors = function() {
+        
         var form = $(this);
         var errorList = $('ul.ErrorMessages', form);
-        
+
         var showAllErrorMessages = function() {
+
+            $("#first_name").val($("#first_name").val().trim());        
+            $("#last_name").val($("#last_name").val().trim());
+
+            
             $("#ErrorMessages").removeClass("SuccessMessages")
             $("#ErrorMessages").addClass("ErrorMessages")
             errorList.empty();
-            
+
             //Find all invalid fields within the form.
             form.find(':invalid').each(function(index, node) {
 
