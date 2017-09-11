@@ -63,7 +63,8 @@ window.onFormSubmitted = function() {
 
 firsttrimmed=first.trim();
 lasttrimmed=last.trim();
-     if (firsttrimmed==""  || lasttrimmed=="")
+meetuptrimmed=meetupname.trim();
+     if (firsttrimmed==""  || lasttrimmed=="" || meetuptrimmed=="")
     {
     }
     else
