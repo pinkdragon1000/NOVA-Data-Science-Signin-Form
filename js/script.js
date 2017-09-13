@@ -4,8 +4,6 @@
 
 function handleLoad()
 {
-    var date = document.lastModified;
-    $("#dateupdated").html("Page Last Modified: "+ date);
  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAOdoqi80u5QNcmjwymTnY7RnvS1sgN9sg",
