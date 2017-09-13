@@ -76,9 +76,7 @@ lasttrimmed=last.trim();
             meetup_name: meetupname
         });
         resetForm();
-       
-    
-    }
+        }
     return false;
 }
 
@@ -123,10 +121,10 @@ $(function() {
                 $("#ErrorMessages").removeClass("ErrorMessages");
                 $("#ErrorMessages").addClass("SuccessMessages");
                 errorList
+                    .show()
                     .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>");
         }
     
-               
         };
 
         $('input[type=submit], button', form).on('click', showAllErrorMessages);
