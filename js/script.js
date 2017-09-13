@@ -122,11 +122,9 @@ $(function() {
         
             if (errorList.html() == "") {
                 $("#ErrorMessages").removeClass("ErrorMessages");
-                $("#ErrorMessages").addClass("SuccessMessages");
-                errorList
-                    .show()
-                    .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>");
-            }
+               // $("#ErrorMessages").addClass("SuccessMessages");
+                alert("Thank you!  Your form has been submitted.");
+                }
     
         };
 
