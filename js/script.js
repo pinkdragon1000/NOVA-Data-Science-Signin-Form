@@ -48,7 +48,8 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
 });
 
 function resetForm() {
-    $("#mainform").reset();
+ 
+    document.getElementById("mainform").reset();
     $("#meetup_account").attr("required","true");
 }
 
@@ -125,7 +126,7 @@ $(function() {
                 errorList
                     .show()
                     .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>");
-        }
+            }
     
         };
 

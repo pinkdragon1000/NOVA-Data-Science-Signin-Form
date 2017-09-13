@@ -45,7 +45,7 @@
         <!-- Admin Login -->
         <div id="adminlogin" class="Modal">
             <center>
-                <form class="ModalContent animate" onsubmit="return false;" >
+                <form class="ModalContent animate" onsubmit="return false;" method="post" id="adminLogin" >
                    
                     <div class="container">
                          <ul class="ErrorMessages"></ul>
@@ -72,7 +72,7 @@
 
         <!--Signin Form-->
         <center>
-            <form method ="post" onsubmit="return onFormSubmitted();" id="mainform">
+            <form method ="post" action="index.html" onsubmit="return onFormSubmitted();" id="mainform">
                 <h2> Meetup Attendee Sign-In </h2>
                 <hr>
                 <ul class="ErrorMessages" id="ErrorMessages"></ul>
