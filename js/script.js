@@ -34,19 +34,21 @@ logout.addEventListener('click', function(e) {
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
     if(firebaseUser){
         console.log(firebaseUser);
-        document.getElementById('adminlogin').style.display='none';
-         document.getElementById('logout').style.display = 'block';
+        
+       $("#adminlogin").css("display", "none"); 
+       $("#logout").css("display", "block");
     }
     else{
          console.log(firebaseUser);
         console.log("not logged in");
-        document.getElementById('adminlogin').style.display='block';
-         document.getElementById('logout').style.display = 'none';
+
+        $("#adminlogin").css("display", "block");
+        $("#logout").css("display", "none");
     }
 });
 
 function resetForm() {
-    document.getElementById("mainform").reset();
+    $("#mainform").reset();
     $("#meetup_account").attr("required","true");
 }
 
@@ -55,10 +57,10 @@ window.onFormSubmitted = function() {
     var date = Date.now();
     var ref = firebase.database().ref(date);    
     
-    var first = document.getElementById("first_name").value;
-    var last = document.getElementById("last_name").value;
-    var meetupaccount=$("input[name=yesno]:checked").val();
-    var meetupname = document.getElementById("meetup_name").value;
+    var first = $("#first_name").val();
+    var last = $("#last_name").val();
+    var meetupaccount = $("input[name=yesno]:checked").val();
+    var meetupname = $("#meetup_name").val();
 
 firsttrimmed=first.trim();
 lasttrimmed=last.trim();
@@ -143,13 +145,13 @@ $(function() {
 /* Displays field "Meetup name" if yes is checked and doesn't display if no is checked*/
 window.yesnoCheck = function() {
     $("#meetup_account").removeAttr("required");
-    if (document.getElementById('meetup_account').checked) {
-        document.getElementById('ifYes').style.display = 'block';
+    if ($("#meetup_account").is(":checked")) {
+        $("#ifYes").css("display", "block");
         $("#meetup_name").attr("required","true");
     }
     else
     {
-        document.getElementById('ifYes').style.display = 'none';
+        $("#ifYes").css("display", "none");
         $("#meetup_name").removeAttr("required");
     } 
 };
