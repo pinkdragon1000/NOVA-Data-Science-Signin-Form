@@ -1,6 +1,7 @@
  /* Sita Robinson */
  
 
+
 function handleLoad()
 {
     var date = document.lastModified;
@@ -122,10 +123,12 @@ $(function() {
             if (errorList.html() == "") {
                 $("#ErrorMessages").removeClass("ErrorMessages");
                 $("#ErrorMessages").addClass("SuccessMessages");
-
+        
+        
                 errorList
                     .show()
-                    .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>");
+                    .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>")
+                    .delay(1500).hide(0);
             }
     
         };
