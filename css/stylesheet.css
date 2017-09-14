@@ -33,6 +33,11 @@ div {
     font-weight: bold;
 }
 
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
 label {
     display: inline-block;
     width: 300px;
@@ -50,6 +55,14 @@ input[type=text], input[type=password], text-area {
     padding: 12px 20px;
     font-size: 16px;
     display: inline-block;
+    border: 1px solid rgb(158, 156, 156);
+    box-sizing: border-box;
+    color: rgb(22,40,76);
+    font-weight: bold;
+}
+p{
+ 
+    font-size: 16px;
     border: 1px solid rgb(158, 156, 156);
     box-sizing: border-box;
     color: rgb(22,40,76);
@@ -149,6 +162,22 @@ label.required:before {
   }
   .Col{
     width: 50%;
+  }
+}
+
+.Col2 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .Col2 {
+    float: right;
+  }
+  .Col2{
+    width: 40%;
   }
 }
 
