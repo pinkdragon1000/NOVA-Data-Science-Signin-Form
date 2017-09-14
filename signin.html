@@ -1,0 +1,107 @@
+<!--Sita Robinson -->
+<!DOCTYPE html>
+<html>
+    <head>
+
+        
+        <!--Firebase-->
+        <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+
+        <!-- Load JQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+       
+         <!--Main Javascript file-->
+        <script src="js/script.js"></script>
+     
+
+         <!-- Main CSS file -->
+        <link rel="stylesheet" href="css/stylesheet.css">
+
+
+        <title>NOVA Data Science Sign-in</title>
+        <link rel="shortcut icon" type="images/x-icon" href="images/data.ico" />
+
+    
+    </head>
+
+    <body>
+
+        <div class="row">
+                <div class="Col">
+            
+                    <center>
+                        <img src="images/datalogo.png" height="100px" width="200px">
+                        <button id="logout" class="SubmitButton" style="display: none;">Logout</button>
+                     </center>
+                    
+                    
+                </div>
+        </div>
+
+        <!-- Admin Login -->
+        <div id="adminlogin" class="Modal">
+            <center>
+                <form class="ModalContent animate" onsubmit="return false;" method="post" id="adminLogin" >
+                   
+                    <div class="container">
+                        <h2> Admin Login </h2>
+                        <hr>
+                        <ul class="ErrorMessages" id="ErrorMessages"></ul>
+                        <div>
+                            <label for="email">Email: </label>
+                            <input type="text" id="email" required>
+                        </div>
+
+                        <div>
+                            <label for="password">Password: </label>
+                            <input type="password" id="password" required>
+                        </div>
+
+                        <br><br>
+                        <button type="submit" id="login" class="SubmitButton">Login</button>
+                    </div>
+
+                </form>
+            </center>
+        </div>
+
+
+        <!--Signin Form-->
+        <center>
+            <form method ="post" action="index.html" onsubmit="return onFormSubmitted();" id="mainform">
+                <h2> Meetup Attendee Sign-In </h2>
+                <hr>
+                <ul class="ErrorMessages" id="ErrorMessages"></ul>
+
+                <div>
+                    <label for="first_name" class="required"> First Name:</label> <br>
+                    <input id="first_name" type="text" required>
+                </div>
+
+                <div>
+                    <label for="last_name" class="required">Last Name:</label>
+                    <br>
+                    <input id="last_name" type="text" required>
+                </div>
+                <div>
+                    <label for="meetup_account" class="required">Do you have a Meetup account?</label> <br>
+                    <input type="radio" onclick="yesnoCheck();" id="meetup_account"  name="yesno" required> Yes   <input type="radio" onclick="yesnoCheck();" name= "yesno">No<br>
+                    <div id="ifYes" style="display:none">
+                        <label for="meetup_name" class="required">Meetup Name:</label> <br><input id="meetup_name" type="text">
+                    </div>
+                </div>
+
+                <br>
+                <button type="submit" value="Submit" class="SubmitButton">Submit</button>
+                <br>
+                <br>
+            </form>
+        </center>
+           
+
+    </body>
+</html>
