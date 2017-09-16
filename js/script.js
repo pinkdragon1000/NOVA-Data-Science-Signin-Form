@@ -53,7 +53,11 @@ function resetForm() {
 
 window.onFormSubmitted = function() {
 
-    var date = Date.now();
+
+    
+    var dateObj = new Date();
+    var date=dateObj.getMonth()+1+"-"+ dateObj.getDate()+"-"+ dateObj.getFullYear();
+    console.log("key: ", date);
     var ref = firebase.database().ref(date);    
     
     var first = $("#first_name").val();
