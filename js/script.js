@@ -1,5 +1,18 @@
  /* Sita Robinson */
- 
+ function handleLoad()
+{
+ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAOdoqi80u5QNcmjwymTnY7RnvS1sgN9sg",
+    authDomain: "nova-data-science-signin.firebaseapp.com",
+    databaseURL: "https://nova-data-science-signin.firebaseio.com",
+    projectId: "nova-data-science-signin",
+    storageBucket: "nova-data-science-signin.appspot.com",
+    messagingSenderId: "628585999318"
+  };
+  firebase.initializeApp(config);
+}
+
 
 function resetForm() {
     document.getElementById("mainform").reset();
@@ -118,6 +131,10 @@ window.yesnoCheck = function() {
         $("#meetup_name").removeAttr("required");
     } 
 };
+
+$( document ).ready(function() {
+     handleLoad();
+});
 
 
 
