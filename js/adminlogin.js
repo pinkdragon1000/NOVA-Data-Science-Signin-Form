@@ -63,9 +63,6 @@ $(function() {
              $("#email").val($("#email").val().trim());        
             $("#password").val($("#password").val().trim());
 
-            
-            $("#ErrorMessages").removeClass("SuccessMessages")
-            $("#ErrorMessages").addClass("ErrorMessages")
             errorList.empty();
 
             //Find all invalid fields within the form.
@@ -86,17 +83,6 @@ $(function() {
                     .append('<li><span>' + label.html() + '</span> ' + message + '</li>');
             
             });
-        
-            if (errorList.html() == "") {
-                $("#ErrorMessages").removeClass("ErrorMessages");
-                $("#ErrorMessages").addClass("SuccessMessages");
-        
-        
-                errorList
-                    .show()
-                    .append('<li><span>'+"Thank you your input has been submitted!"+"</li></span>")
-                    .delay(1500).hide(0);
-            }
     
         };
 
