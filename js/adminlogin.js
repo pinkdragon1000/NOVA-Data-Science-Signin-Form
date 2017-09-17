@@ -60,6 +60,8 @@ $(function() {
         var errorList = $('ul.ErrorMessages', form);
 
         var showAllErrorMessages = function() {
+             $("#email").val($("#email").val().trim());        
+            $("#password").val($("#password").val().trim());
 
             
             $("#ErrorMessages").removeClass("SuccessMessages")
