@@ -31,7 +31,7 @@ window.onFormSubmitted = function() {
     var first = $("#first_name").val();
     var last = $("#last_name").val();
     var meetupaccount = $("input[name=yesno]:checked").val();
-    var meetupname = $("#meetup_name").val();
+    var email = $("#email").val();
 
 firsttrimmed=first.trim();
 lasttrimmed=last.trim();
@@ -46,7 +46,8 @@ lasttrimmed=last.trim();
         var newPostRef = ref.push({
             first_name: first,
             last_name: last,
-            meetup_name: meetupname
+            meetup_account: meetupaccount,
+            email: email
         });
         resetForm();
         }
