@@ -55,7 +55,6 @@ query.once("value")
   else
   {
       document.getElementById("winners").innerHTML="Winners"+"<br>";
-      var num=1;
       for(s=0;s<=numInt-1;s++)
         {
             var index=Math.floor(Math.random()*array.length);
@@ -73,7 +72,6 @@ query.once("value")
                 } 
         
                 array.splice(index, 1);
-                num++;
 
         }
 
