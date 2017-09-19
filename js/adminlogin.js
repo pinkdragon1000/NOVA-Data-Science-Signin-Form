@@ -49,6 +49,41 @@ firebase.auth().onAuthStateChanged(function(firebaseUser) {
         $("#adminlogin").css("display", "block");
         $("#logout").css("display", "none");
     }
+
+    try {
+    firebase.initializeApp(config);
+} 
+catch (err) {
+    if (!/already exists/.test(err.message)) {
+    console.error('Firebase initialization error', err.stack)
+}
+}
+// Loop through attendees in order with the forEach() method. The callback
+// provided to forEach() will be called synchronously with a DataSnapshot
+// for each child:
+var dateObj = new Date();
+var date=dateObj.getMonth()+1+"-"+ dateObj.getDate()+"-"+ dateObj.getFullYear();
+console.log(date);
+var array=new Array();
+var query = firebase.database().ref(date).orderByKey();
+query.once("value")
+  .then(function(snapshot) {
+     
+    snapshot.forEach(function(childSnapshot) {
+        var key = childSnapshot.key;
+        var childData = childSnapshot.val();
+        
+        console.log(key);
+        console.log(childData);
+        console.log(childData.first_name +" "+ childData.last_name);
+        array.push(childData.first_name +" "+ childData.last_name);
+        console.log(array);
+       
+         
+  });
+
+ document.getElementById("numAttendees").innerHTML="Number of Attendees: <p>"+ array.length+"</p>";
+  })
 });
 }
 
@@ -97,6 +132,10 @@ $(function() {
     
     $('form').each(createAllErrors);
 });
+
+
+
+
 
 
 
