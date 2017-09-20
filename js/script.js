@@ -26,7 +26,11 @@
 
 
 function resetForm() {
-    document.getElementById("mainform").reset();
+    //document.getElementById("mainform").reset();
+    $("#first_name").val('');
+    $("#last_name").val('');
+    $("input[name=yesno]").prop("checked",false)
+    $("#email").val('');
     $("#meetup_account").attr("required","true");
 }
 
@@ -44,10 +48,13 @@ window.onFormSubmitted = function(event) {
     var meetupaccount = $("input[name=yesno]:checked").val();
     var email = $("#email").val();
 
-firsttrimmed=first.trim();
-lasttrimmed=last.trim();
+    firsttrimmed=first.trim();
+    lasttrimmed=last.trim();
+    meetupaccounttrimmed = meetupaccount.trim();
+    emailtrimmed = email.trim();
 
-     if (firsttrimmed==""  || lasttrimmed=="")
+     if (firsttrimmed==""  || lasttrimmed=="" || meetupaccounttrimmed == "" ||
+     emailtrimmed == "")
     {
     }
     else
@@ -55,10 +62,10 @@ lasttrimmed=last.trim();
         // Generate a reference to a new location and add some data using push()
         //var postsRef = ref.child("nova-data-science-signin");
         var newPostRef = ref.push({
-            first_name: first,
-            last_name: last,
-            meetup_account: meetupaccount,
-            email: email
+            first_name: firsttrimmed,
+            last_name: lasttrimmed,
+            meetup_account: meetupaccounttrimmed,
+            email: emailtrimmed
         });
         resetForm();
         }
