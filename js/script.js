@@ -11,6 +11,17 @@
     messagingSenderId: "628585999318"
   };
   firebase.initializeApp(config);
+
+
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    // No user is signed in.
+    document.location.href="index.html"
+  }
+});
+
 }
 
 

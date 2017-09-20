@@ -1,21 +1,5 @@
 function getUserInformation() {
-var config = {
-    apiKey: "AIzaSyAOdoqi80u5QNcmjwymTnY7RnvS1sgN9sg",
-    authDomain: "nova-data-science-signin.firebaseapp.com",
-    databaseURL: "https://nova-data-science-signin.firebaseio.com",
-    projectId: "nova-data-science-signin",
-    storageBucket: "nova-data-science-signin.appspot.com",
-    messagingSenderId: "628585999318"
-  };
 
-try {
-    firebase.initializeApp(config);
-} 
-catch (err) {
-    if (!/already exists/.test(err.message)) {
-    console.error('Firebase initialization error', err.stack)
-}
-}
 // Loop through attendees in order with the forEach() method. The callback
 // provided to forEach() will be called synchronously with a DataSnapshot
 // for each child:
@@ -79,5 +63,31 @@ query.once("value")
 
   }
 });
-
 }
+
+$(document).ready(function() {
+    var config = {
+        apiKey: "AIzaSyAOdoqi80u5QNcmjwymTnY7RnvS1sgN9sg",
+        authDomain: "nova-data-science-signin.firebaseapp.com",
+        databaseURL: "https://nova-data-science-signin.firebaseio.com",
+        projectId: "nova-data-science-signin",
+        storageBucket: "nova-data-science-signin.appspot.com",
+        messagingSenderId: "628585999318"
+    };
+    try {
+        firebase.initializeApp(config);
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+            } else {
+                // No user is signed in.
+                document.location.href="index.html";
+            }
+        });
+    }
+    catch (err) {
+        if (!/already exists/.test(err.message)) {
+        console.error('Firebase initialization error', err.stack)
+        }
+    }
+});
