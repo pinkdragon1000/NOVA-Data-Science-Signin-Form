@@ -33,7 +33,7 @@ function resetForm() {
 window.onFormSubmitted = function(event) {
 
     //e.preventDefault();
-    /*
+    
     var dateObj = new Date();
     var date=dateObj.getMonth()+1+"-"+ dateObj.getDate()+"-"+ dateObj.getFullYear();
     console.log("key: ", date);
@@ -62,8 +62,7 @@ lasttrimmed=last.trim();
         });
         resetForm();
         }
-        */
-    event.preventDefault();
+    //event.preventDefault();
     return false;
 }
 
@@ -105,39 +104,9 @@ $(function() {
             });
         
             if (errorList.html() == "") {
-
-                var dateObj = new Date();
-                var date=dateObj.getMonth()+1+"-"+ dateObj.getDate()+"-"+ dateObj.getFullYear();
-                console.log("key: ", date);
-                var ref = firebase.database().ref(date);    
-                
-                var first = $("#first_name").val();
-                var last = $("#last_name").val();
-                var meetupaccount = $("input[name=yesno]:checked").val();
-                var email = $("#email").val();
-
-                firsttrimmed=first.trim();
-                lasttrimmed=last.trim();
-
-                if (firsttrimmed==""  || lasttrimmed=="")
-                {
-                    /* Do Nothing */
-                }
-                else
-                {
-                    // Generate a reference to a new location and add some data using push()
-                    //var postsRef = ref.child("nova-data-science-signin");
-                    var newPostRef = ref.push({
-                        first_name: first,
-                        last_name: last,
-                        meetup_account: meetupaccount,
-                        email: email
-                    });
-                    resetForm();
-                }
-
                 $("#ErrorMessages").removeClass("ErrorMessages");
                 $("#ErrorMessages").addClass("SuccessMessages");
+        
         
                 errorList
                     .show()
