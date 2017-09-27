@@ -1,3 +1,4 @@
+/*Sita Robinson*/
 function handleLoad()
 {
  // Initialize Firebase

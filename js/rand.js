@@ -1,3 +1,4 @@
+/*Sita Robinson*/
 function getUserInformation() {
 
 // Loop through attendees in order with the forEach() method. The callback
